@@ -1,0 +1,6 @@
+
+npm i bootstrap jquery @popperjs/core
+
+
+THEME
+npm install admin-lte@^3.0 --save

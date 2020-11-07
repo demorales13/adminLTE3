@@ -1,0 +1,63 @@
+<div class="modal-header"> 
+    <h4 class="modal-title" 
+        id="modal-basic-title"> 
+        Add Education Item 
+    </h4> 
+    <button type="button" class="close"
+            aria-label="Close" (click)= 
+            "modal.dismiss('Cross click')"> 
+
+        <span aria-hidden="true"> 
+            × 
+        </span> 
+    </button> 
+</div> 
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="modal-body"> 
+        <div class="display-block">
+            <label>
+                Name:
+                <input type="text" formControlName="name">
+            </label>
+            <div *ngIf="(formGroup.controls['name'].touched || isSubmitted) &&
+                   formGroup.controls['name'].invalid"
+                   class="alert-danger">
+                <div *ngIf="formGroup.controls['name'].errors &&
+                     formGroup.controls['name'].errors.required">
+                    Name is required.
+                </div>
+                <div *ngIf="formGroup.controls['name'].errors &&
+                     (formGroup.controls['name'].errors.minLength || formGroup.controls['name'].errors.maxLength)">
+                    Invalid field
+                </div>
+            </div>
+        </div>
+        <div class="display-block margin-top-10">
+            <label>
+                Year:
+                <input type="text" formControlName="year">
+            </label>
+            <div *ngIf="(formGroup.controls['year'].touched || isSubmitted) &&
+                formGroup.controls['year'].invalid" 
+                class="alert-danger">
+                <div *ngIf="formGroup.controls['year'].errors &&
+                    formGroup.controls['year'].errors.required">
+                    year is required.
+                </div>
+                <div *ngIf="formGroup.controls['year'].errors &&
+                    (formGroup.controls['year'].errors.minLength || formGroup.controls['year'].errors.maxLength)">
+                    Invalid field
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="modal-footer"> 
+        <button type="submit" 
+            class="btn btn-outline-dark"> 
+            Save 
+        </button> 
+    </div> 
+</form>
+
+

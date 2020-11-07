@@ -1,0 +1,14 @@
+
+<div *ngFor="let education of educationList">
+    <span>{{ education.name}} {{ education.year }}</span>
+</div>
+
+<div *ngIf="educationList.length == 0 &&
+    isSubmitted">
+    You must enter a education item
+</div>
+
+<button class="btn btn-lg btn-outline-primary" 
+    (click)="open()"> 
+    Add new education item 
+</button> 
