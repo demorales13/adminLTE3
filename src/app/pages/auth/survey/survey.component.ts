@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgWizardConfig, NgWizardService, StepChangedArgs, StepValidationArgs, STEP_STATE, THEME } from 'ng-wizard';
 import { of } from 'rxjs';
 import { PersonalComponent } from './personal/personal.component';
-import { Education, EducationComponent } from './education/education.component';
+import { EducationComponent } from './education/education.component';
 
 
 @Component({

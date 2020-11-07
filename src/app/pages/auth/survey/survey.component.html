@@ -1,22 +1,26 @@
+
 <ng-wizard [config]="config" (stepChanged)="stepChanged($event)">
-  
-    <ng-wizard-step [title]="'1'" 
-                    [description]="'Personal'"
-                    [canEnter]="isValidTypeBoolean" 
-                    [canExit]="isValidPersonalForm.bind(this)">
-      <app-personal></app-personal>
-    </ng-wizard-step>
-    
-    <ng-wizard-step [title]="'2'" 
-                    [description]="'Education'"
-                    [canEnter]="isValidFunctionReturnsObservable.bind(this)" 
-                    [canExit]="isValidFunctionReturnsBoolean.bind(this)">
-        <app-education></app-education>
-    </ng-wizard-step>
-  
-  </ng-wizard>
+  <ng-wizard-step
+    [title]="'1'"
+    [description]="'Personal'"
+    [canEnter]="isValidTypeBoolean"
+    [canExit]="isValidPersonalForm.bind(this)"
+  >
+    <app-personal></app-personal>
+  </ng-wizard-step>
 
+  <ng-wizard-step
+    [title]="'2'"
+    [description]="'Education'"
+    [canEnter]="isValidFunctionReturnsObservable.bind(this)"
+    [canExit]="isValidFunctionReturnsBoolean.bind(this)"
+  >
+    <app-education></app-education>
+  </ng-wizard-step>
+</ng-wizard>
 
-  <select [(ngModel)]="selectedTheme" (change)="setTheme(selectedTheme)">
-    <option *ngFor="let theme of themes" [ngValue]="theme">{{ theme }}</option>
-  </select>
+<select [(ngModel)]="selectedTheme" (change)="setTheme(selectedTheme)">
+  <option *ngFor="let theme of themes" [ngValue]="theme">
+    {{ theme }}
+  </option>
+</select>

@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
+import { SurveyModule } from './survey/survey.module';
+import { HomeModule } from './home/home.module';
+
 
 @NgModule({
   declarations: [
@@ -12,6 +15,8 @@ import { AuthComponent } from './auth.component';
   imports: [
     CommonModule,
     AuthRoutingModule,
+    SurveyModule,
+    HomeModule,
     ComponentsModule
   ],
   bootstrap: [AuthComponent]
